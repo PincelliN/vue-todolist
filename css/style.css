@@ -23,3 +23,6 @@ li{
 .text{
     text-decoration: line-through;
 }
+.notexdecoration{
+    text-decoration: none !important; 
+}
