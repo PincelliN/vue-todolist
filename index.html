@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vue TO DO List</title>
+</head>
+<body>
+        <div id="container">
+            <h1>Vue To Do List</h1>
+
+            <input type="text" placeholder="Cose da fare" v-model="itemName">
+             <br>
+            <label for="radio">Fatto</label>
+            <input type="radio" name="todo" required value="0" v-model="itemValue">
+            <label for="radio">Da fare</label>
+            <input type="radio" name="todo" required value="1" v-model="itemValue">
+            <br>
+            <button @click="AddItem">Invia alla lista</button>
+            <div>
+                <ul v-if="ToDoList.length >0 ">
+                    <li v-for="(todo,i) in ToDoList" 
+                    :class="todo.Value == 0?'text':''"> {{todo.Name}}<i @click="RemoveItem(i)">X</i> </li>
+                </ul>
+                <div v-else>
+                    Non hai nulla da fare
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="Text/Javascript" src="js/main.js"></script>
+</body>
+</html>
