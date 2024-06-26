@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <title>Vue TO DO List</title>
 </head>
@@ -11,6 +14,7 @@
             <h1>Vue To Do List</h1>
 
             <input type="text" placeholder="Cose da fare" v-model="itemName">
+
              <br>
             <label for="radio">Da fare</label>
             <input type="radio" name="todo" required value="0" v-model="itemValue">
@@ -21,9 +25,9 @@
             <div>
                 <ul v-if="ToDoList.length >0 ">
                     <li v-for="(todo,i) in ToDoList" 
-                    :class="todo.Value != 0?'text':''" @click="ChangeValue(i)" > {{todo.Name}}<i class="notexdecoration" @click="RemoveItem(i)">X</i> </li>
+                     @click="ChangeValue(i)" >  <label :class="todo.Value != 0?'decoration':''">{{todo.Name}}</label><i class="fa-solid fa-xmark" @click="RemoveItem(i)"></i> </li>
                 </ul>
-                <div v-else>
+                <div  v-else>
                     Non hai nulla da fare
                 </div>
             </div>

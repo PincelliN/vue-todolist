@@ -7,6 +7,9 @@
     width: 80%;
     margin: 0 auto;
     text-align: center;
+    background-color: red;
+    border-radius: 50px;
+    padding: 20px;
 }
 #container> *{
     margin: 10px;
@@ -15,14 +18,15 @@ ul{
     width: 50%;
     margin: 0 auto;
     list-style: none;
+    background-color: rgba(211, 209, 209,0.5);
+    color: black;
+   
 }
 li{
     display: flex;
     justify-content: space-between;
+    padding: 0 5px;
 }
-.text{
+.decoration{
     text-decoration: line-through;
-}
-.notexdecoration{
-    text-decoration: none !important; 
 }
