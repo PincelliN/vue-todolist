@@ -5,6 +5,7 @@ createApp({
     return {
       itemName: "",
       itemValue: "",
+      error: false,
       ToDoList: [
         {
           Name: "Spesa",
@@ -27,10 +28,13 @@ createApp({
         Name: this.itemName,
         Value: this.itemValue,
       };
-      if (this.itemName != "" && this.itemValue != "") {
+      if (item.Name.length >4 && this.itemValue != "") {
         this.ToDoList.unshift(item);
         this.itemName = "";
         this.itemValue = "";
+        this.error=false
+      }else{
+        this.error=true
       }
     },
     RemoveItem(index) {

@@ -14,7 +14,7 @@
             <h1>Vue To Do List</h1>
 
             <input type="text" placeholder="Cose da fare" v-model="itemName">
-
+            <div v-if="error === true"> Devi riempire tutti i campi</div>
              <br>
             <label for="radio">Da fare</label>
             <input type="radio" name="todo" required value="0" v-model="itemValue">
